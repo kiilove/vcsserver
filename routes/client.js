@@ -7,6 +7,7 @@ router.post("/register/excel", async (req, res) => {
   // res.status(200);
 
   const clientObject = req.body;
+  //console.log(Object.values(clientObject));
 
   try {
     const savedClient = await Client.insertMany(clientObject);
