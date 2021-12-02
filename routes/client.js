@@ -17,4 +17,13 @@ router.post("/register/excel", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const client = await Client.find().sort({ _id: 1 });
+    res.status(200).json(client);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

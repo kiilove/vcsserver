@@ -1,5 +1,13 @@
 const mongoose = require("mongoose");
 
+const MemoSchema = new mongoose.Schema(
+  {
+    context: String,
+    require: false,
+  },
+  { timestamps: true }
+);
+
 const ClientSchema = new mongoose.Schema(
   {
     clientNumber: {
@@ -14,6 +22,12 @@ const ClientSchema = new mongoose.Schema(
       type: Object,
       required: false,
     },
+    clientStatus: {
+      type: String,
+      required: false,
+      default: "active",
+    },
+    clientMemo: [MemoSchema],
   },
   { timestamps: true }
 );
