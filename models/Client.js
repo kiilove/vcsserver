@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const MemoSchema = new mongoose.Schema(
-  {
-    context: String,
-    require: false,
-  },
-  { timestamps: true }
-);
+// const MemoSchema = new mongoose.Schema(
+//   {
+//     context: String,
+//     require: false,
+//   },
+//   { timestamps: true }
+// );
 
 const ClientSchema = new mongoose.Schema(
   {
@@ -18,16 +18,25 @@ const ClientSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    clientObject: {
+    clientExtra: {
       type: Object,
       required: false,
+      default:{gender:"M",age:30,level:0,name:"",telNum2:"", info1:"", info2: ""},
     },
     clientStatus: {
       type: String,
       required: false,
       default: "active",
     },
-    clientMemo: [MemoSchema],
+    clientFavorite: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    clientMemo: {
+      type: Array,
+      required: false,
+    },
   },
   { timestamps: true }
 );
