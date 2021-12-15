@@ -18,21 +18,24 @@ router.post("/register/clients", async (req, res) => {
 });
 
 //update
-router.put(":/id", async(req, res)=>{
+router.put(":/id", async (req, res) => {
   try {
-    const updatedClient = await Client.findByIdAndUpdate(req.params.id,{$set:req.body}, {new:true
-    })
-    res.status(200).json(updatedClient)
+    const updatedClient = await Client.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    res.status(200).json(updatedClient);
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 //GET One
-router.get("/find/:id", async(req, res) =>{
+router.get("/find/:id", async (req, res) => {
   try {
-    const client = await Client.findById(req.params.id).sort({_id:-1});
-    console.log(client)
+    const client = await Client.findById(req.params.id).sort({ _id: -1 });
+    console.log(client);
     res.status(200).json(client);
   } catch (err) {
     res.status(500).json(err);
@@ -43,7 +46,7 @@ router.get("/find/:id", async(req, res) =>{
 router.get("/", async (req, res) => {
   try {
     const client = await Client.find().sort({ _id: -1 });
-    console.log(client)
+    console.log(client);
     res.status(200).json(client);
   } catch (err) {
     res.status(500).json(err);

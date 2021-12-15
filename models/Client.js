@@ -21,7 +21,15 @@ const ClientSchema = new mongoose.Schema(
     clientExtra: {
       type: Object,
       required: false,
-      default:{gender:"M",age:30,level:0,name:"",telNum2:"", info1:"", info2: ""},
+      default: {
+        gender: "M",
+        age: 30,
+        level: 0,
+        name: "",
+        telNum2: "",
+        info1: "",
+        info2: "",
+      },
     },
     clientStatus: {
       type: String,
