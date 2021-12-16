@@ -32,14 +32,9 @@ const ClientSchema = new mongoose.Schema(
       },
     },
     clientStatus: {
-      type: String,
+      type: Object,
       required: false,
-      default: "active",
-    },
-    clientFavorite: {
-      type: Boolean,
-      required: false,
-      default: false,
+      default: { active: true, like: false, dislike: false, favorite: false },
     },
     clientMemo: {
       type: Array,
