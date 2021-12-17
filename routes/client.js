@@ -18,7 +18,7 @@ router.post("/register/clients", async (req, res) => {
 });
 
 //update
-router.put(":/id", async (req, res) => {
+router.put("/find/:id", async (req, res) => {
   try {
     const updatedClient = await Client.findByIdAndUpdate(
       req.params.id,

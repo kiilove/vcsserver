@@ -34,7 +34,12 @@ const ClientSchema = new mongoose.Schema(
     clientStatus: {
       type: Object,
       required: false,
-      default: { active: true, like: false, dislike: false, favorite: false },
+      default: {
+        active: true,
+        like: false,
+        dislike: false,
+        favorite: false,
+      },
     },
     clientMemo: {
       type: Array,
